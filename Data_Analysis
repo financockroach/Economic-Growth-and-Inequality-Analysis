@@ -1,0 +1,166 @@
+male <- ts(Wage45$Males, start = 1997)
+female <- ts(Wage45$Females, start = 1997)
+cpi <- ts(Wage45$CPI, start = 1997)
+
+# Q1
+plot(female,
+     lwd=2,
+     main="Hourly Nominal Wage for Males and Females",
+     ylab="Dollars Per Hour",
+     ylim=c(10, 25))
+lines(male, col=2, lty=2, lwd=2)
+legend("topleft",
+       c("Females", "Males"),
+       col=1:2, lty=1:2, lwd=2, bty="n")
+# Q2
+male_real <- male / (cpi/100)
+female_real <- female / (cpi/100)
+
+plot(female_real,
+     lwd=2,
+     main="Hourly Real Wage for Males and Females",
+     ylab="Dollars Per Hour",
+     ylim=c(10, 25))
+lines(male_real, col=2, lty=2, lwd=2)
+
+
+legend("topleft",
+       c("Females", "Males",),
+       col=1:2, lty=1:2, lwd=2, bty="n")
+
+# Q3
+t <- time(male)
+coefT_male_real <- coef(lm(male_real~t))
+T_male_real <- coefT_male_real[1] + coefT_male_real[2]*t
+coefT_female_real <- coef(lm(female_real~t))
+T_female_real <- coefT_female_real[1] + coefT_female_real[2]*t
+
+plot(T_female_real,
+     lwd=2,
+     main="Linear Trend of Hourly Real Wage for Males and Females",
+     ylab="Dollars Per Hour",
+     ylim=c(10, 20))
+lines(T_male_real, col=2, lty=1, lwd=2)
+lines(female_real,col=3, lty=1, lwd=2)
+lines(male_real, col=4, lty=1, lwd=2)
+legend("topleft",
+       c("Females", "Males","Females Trend","Males Trend"),
+       col=c(1, 2, 3, 4), lty=c(1, 1, 1, 1), lwd=2, bty="n")
+
+
+# Q4
+CSI_male_real <- male_real - T_male_real
+CSI_female_real <- female_real - T_female_real
+
+plot(CSI_female_real, CSI_male_real,
+     xy.lines=F, xy.labels=F,
+     xlab="Females",
+     ylab="Males",
+     main="Cyclical components of Hourly Real Wage for Males and Females")
+
+# Part B
+
+# Q2
+# Load the data
+rm(list=ls())
+ITA <- ts(realgdp$ITA, start = 1970) # Italy
+USA <- ts(realgdp$USA, start = 1970) # United States of America
+AGO <- ts(realgdp$AGO, start = 1970) # Angola
+ISL <- ts(realgdp$ISL, start = 1970) # Iceland      
+
+# Q2
+logITA <- log(ITA)
+logUSA <- log(USA)
+logAGO <- log(AGO)
+logISL <- log(ISL)
+plot(logITA, 
+     lwd=2, 
+     main="Log of Real Per Capita GDP for Italy, United States of America, Angola and Iceland", 
+     ylab="Log of Real Per Capita GDP",
+     ylim=c(5,15))
+lines(logUSA, col=2, lty=2, lwd=2)
+lines(logAGO, col=3, lty=3, lwd=2)
+lines(logISL, col=4, lty=4, lwd=2)
+legend("topleft",
+       c("Italy", "United States of America", "Angola", "Iceland"),
+       col=1:4, lty=1:4, lwd=2, bty="n")
+
+# Q3
+t <- time(logITA)
+t2 <- t^2
+coefT_logITA <- coef(lm(logITA~t+t2))
+T_logITA <- coefT_logITA[1] + coefT_logITA[2]*t + coefT_logITA[3]*t2
+CSI_logITA <- logITA - T_logITA
+
+coefT_logUSA <- coef(lm(logUSA~t+t2))
+T_logUSA <- coefT_logUSA[1] + coefT_logUSA[2]*t + coefT_logUSA[3]*t2
+CSI_logUSA <- logUSA - T_logUSA
+
+coefT_logAGO <- coef(lm(logAGO~t+t2))
+T_logAGO <- coefT_logAGO[1] + coefT_logAGO[2]*t + coefT_logAGO[3]*t2
+CSI_logAGO <- logAGO - T_logAGO
+
+coefT_logISL <- coef(lm(logISL~t+t2))
+T_logISL <- coefT_logISL[1] + coefT_logISL[2]*t + coefT_logISL[3]*t2
+CSI_logISL <- logISL - T_logISL
+
+plot(CSI_logITA, 
+     lwd=2, 
+     main="Cyclical Component of Log of Real Per Capita GDP for Italy, United States of America, Angola and Iceland", 
+     ylab="Log of Real Per Capita GDP",
+     ylim=c(-0.5,0.5))
+lines(CSI_logUSA, col=2, lty=2, lwd=2)
+lines(CSI_logAGO, col=3, lty=3, lwd=2)
+lines(CSI_logISL, col=4, lty=4, lwd=2)
+legend("topleft",
+       c("Italy", "United States of America", "Angola", "Iceland"),
+       col=1:4, lty=1:4, lwd=2, bty="n")
+
+# Q4
+g_ITA <- (ITA[48]/ITA[1])^(1/47) - 1
+g_USA <- (USA[48]/USA[1])^(1/47) - 1
+g_AGO <- (AGO[48]/AGO[1])^(1/47) - 1
+g_ISL <- (ISL[48]/ISL[1])^(1/47) - 1
+g <- c(g_ITA, g_USA, g_AGO, g_ISL)
+
+realgdp_1970 <- c(ITA[1], USA[1], AGO[1], ISL[1])
+
+plot(realgdp_1970, g,
+     xlab="Real Per Capita GDP in 1970",
+     ylab="Average Growth Rate",
+     main="Average Growth Rate vs Real GDP in 1970",
+     pch=19)
+
+# Q5
+year1979 <- realgdp[10,2:153]
+t_year1979 <- ts(year1979, frequency = 1)/1000
+
+hist(c(t_year1979), density=10, col="black", 
+     border="gray", angle=45, breaks=30,
+     main="1979 Real per capita GDP of 152 countries distrubution Anomailes",
+     xlab="Thousands of Real Per Capita GDP in 2011")
+
+
+year2000 <- realgdp[31,2:153]
+t_year2000 <- ts(year2000, frequency = 1)/1000
+
+hist(c(t_year2000), density=10, col="black", 
+     border="gray", angle=45, breaks=30,
+     main="2000 Real per capita GDP of 152 countries distrubution Anomailes",
+     xlab="Thousands of Real Per Capita GDP in 2011")
+
+
+# Q6
+lt_year1 <- log(t_year1979*1000)
+
+hist(c(lt_year1),density=10,col="black",
+     border="gray",angle=45,breaks=30, xlim=c(6,11),ylim=c(0,15),
+     main="1979 Real per capita GDP expressed in log of 152 countries distrubution Anomalies",
+     xlab="International dollars of 2011 expressed in log")
+
+lt_year2 <- log(t_year2000*1000)
+
+hist(c(lt_year2),density=10,col="black",
+     border="gray",angle=45,breaks=30, xlim=c(6,11),ylim=c(0,15),
+     main="2000 Real per capita GDP expressed in log of 152 countries distrubution Anomalies",
+     xlab="International dollars of 2011 expressed in log")
