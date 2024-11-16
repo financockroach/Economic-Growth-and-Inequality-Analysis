@@ -1,0 +1,92 @@
+Part A: The Cost of Living
+For this part, use the file WageXYZ.csv, where XYZ is the number assigned to you by the Quiz on Learn. The file contains an annual series of average nominal hourly wages for males and females in a particular province and industry expressed in dollars per hour. The specific province and industry for your dataset are described in the WageDescriptions.csv file. Look for the row associated with your assigned number. The file also contains the annual series of the consumer price index base 100 = 2002 in that province (Statistics Canada, 2020).
+
+1. Plot the evolution of the hourly nominal wage for males and females on the same chart. Interpret what you see: what kind of trending behaviour, is there a difference between males and females in terms of trends or fluctuations, etc?
+
+The graph demonstrates the hourly nominal wage for males and females in one graph. The red dotted line represents males and the black solid line represents females. The x-axis represents the time and the y-axis represents dollars per hour. Both of the trends are positive going upward.  However, as can be seen from the figure, there is a marked difference in the magnitude of fluctuations between the genders: men's fluctuations are smoother, suggesting a more stable wage trajectory, while women's fluctuations are more dramatic, suggesting a less stable pattern of wage growth. This difference suggests potential differences in short-term changes, with women's wages more susceptible to sudden changes in response to factors such as changes in demand in female-dominated industries or labour market policies. In contrast, the more moderate pattern of fluctuations in men's wage lines implies greater long-term stability, which may stem from their entrenched position in the labour market.
+
+2. Plot the evolution of hourly real wage in dollars of 2002 for males and females on the same chart. Interpret what you see and compare this chart with the one you obtained in the previous question. Which chart between this one and the one produced in the previous question provides a better picture of the evolution of the standard of living of individuals working in that industry? Explain.
+
+In my opinion, the hourly real wages can provide a better picture of the evolution of the standard of living of individuals working in the industry. The nominal wage represents the actual dollar amount received by workers, while the real wage adjusts for changes in purchasing power over time by accounting for inflation or changes in the cost of living. Comparing the two charts, the nominal wage chart shows a potentially higher level of wages because it is not adjusted for inflation. However, it is important to recognize that nominal wages alone can be misleading when assessing changes in real purchasing power and living standards. Real wage charts more accurately reflect an individual's standard of living by taking into account changes in the cost of living. Thus, while nominal wages may appear to be higher, real wage charts provide a more meaningful picture of changes in the standard of living of individuals within an industry.
+
+3. Fit a linear trend to both real wage series and plot the two trends on the same graph. Interpret what you see: is the wage gap changing on average? What is the annual change on average over that period for males and females? Discuss (Hint: To answer the question, you can look at the coefficient of time of the trend equations).
+
+The wage gap will decrease on average since the annual for females is higher than the annual change for males. The annual change for females is 0.217 dollars, and the annual change for males is 0.168 dollars.
+
+4. Detrend the real wage series using the linear trends computed in the previous question. Since the series are annual, the detrended series are the cyclical components. Using a scatter plot, analyze the comovement between the two cyclical components. Try to explain your results: e.g. why there is a positive, negative or no comovement between the two variables?
+
+There is no comovement between the two variables since there is no obvious trend for the plotted graph. Gender dynamics in the labour market, including differences in occupational segregation and employment patterns, may lead to different wage movements. In addition, government policies to address gender differences in wages, changes in the composition of industries and individual characteristics of the labour market may further amplify these differences. Social and cultural factors, such as social norms and attitudes regarding gender roles in the workplace, may also play different roles in shaping the wage dynamics of women and men. Thus, the lack of observable correlation or synchronized movements between women's and men's real wages reflects the intricate interplay of economic, social and institutional factors that influence gender-specific wage trends.
+
+Part B: Business Cycle, Growth and Inequality
+For this part, use the file RealGDP.csv. The file contains an annual series of real per capita GDP for 152 countries from 1970 to 2017 expressed in international dollars of 2011 (Feenstra et al., 2015). Each student has to analyze four different countries. Your four countries are the ones on the row of the file assignedCountries.csv where the value in the assigned number column is equal to XYZ, where XYZ is the same number used in Part A. On the same row, you will also find the assigned years for questions 5 and 6.
+
+1. What are the complete names of the four countries that are represented by the three-letter codes? In the following questions, refer to the countries by their full names, not by their codes.
+Wage 45 Assigned Country:
+ITA: Italy
+USA: United States of America
+AGO: Angola
+ISL: Iceland
+
+2. Plot the evolution of the real per capita GDP of the four countries on the same chart using the log scale. Describe the differences and similarities that you observe.
+
+The observed similarities across the four countries include a relatively stable trend in real per capita GDP over time, with no sudden increases or decreases. Additionally, both Italy and the United States of America exhibit consistent but slow growth in GDP, indicating a steady but gradual increase in economic output.
+
+On the other hand, differences are evident in the initial levels of real per capita GDP, with each country starting at a distinct level. Angola stands out with greater fluctuations in GDP and periods of significant decline compared to the other countries, indicating potentially volatile economic conditions. Iceland also shows some noticeable fluctuations in its GDP, albeit to a lesser extent than Angola. These differences in GDP trajectories suggest varying economic dynamics and potential factors influencing economic performance, such as resource dependence, policy effectiveness, or external shocks. 
+
+Overall, while the countries share similarities in the stability of GDP trends and slow growth rates in some cases, their differing initial levels and fluctuation patterns highlight unique economic circumstances and challenges.
+
+3. Compute the cyclical component of each series expressed in logs using a quadratic trend, and plot them on either 4 different line charts or on the same one. The choice is yours and it depends on which option provides a clearer approach to compare the cycles. Discuss what you see by answering the following questions:
+
+Do you observe a positive, negative or no comovement between the different business cycles? If you observe no comovement between two business cycles, can it be explained by the two countries being poor trading partners? You may have to search the internet to answer that question. If you observe a strong positive comovement between two business cycles, can it be explained by the two countries being strong trading partners? You may also have to search the internet to answer that question. Do you observe common periods of recession? Are they worldwide recessions? You may also have to search the internet to answer that question.
+
+Hint: Cyclical components of annual time series are simply the detrended series.
+
+There is a positive correlation between the business cycles of Italy and the United States, suggesting that the economies of these two countries tend to move in the same direction over time. The close trade relationship between Italy and the United States could indeed explain this positive correlation. As important trading partners, the economic performance of one country affects the other to a large extent. For example, changes in the demand for goods and services, exchange rate fluctuations or changes in the global economic situation can affect both economies simultaneously. In addition, Italy and the United States have close links in terms of investment, technology transfer and financial integration, which further strengthens the positive correlation between their business cycles.
+
+On the other hand, the lack of correlation between the business cycles of Italy and Angola suggests that the economies of the two countries have not synchronized over time. The fact that Italy and Angola are poor trading partners explains, at least in part, this lack of correlation. Limited economic linkages between the two countries, including low levels of trade and investment, may result in minimal spillover effects from one economy to the other. In the absence of significant trade or investment linkages, changes in Italian economic conditions or policies are unlikely to affect Angola, and vice versa. Thus, the lack of correlation between the business cycles of Italy and Angola may be due to the relatively weak trade relations and limited economic integration between the two countries.
+
+There is a common period of recession which is a worldwide recession between the years of 2000 and 2005. There are also other recession periods, but it is not a worldwide recession. 
+
+4. Compute the average annual growth rate between 1970 and 2017 for all four countries. Then, produce a scatter plot with the 1970 real per capita GDPs expressed in logs on the x-axis and the average growth rates on the y-axis (you should have four points). Discuss the results by answering the following questions:
+
+Are the four countries converging with each other? Using countries' characteristics such as the level of education, life expectancy, economic freedom, etc., try to justify why some are converging and why some are not. You can use the data files from the module on Growth and Development or get the information from a reliable internet source (like the World Bank).
+
+The third country converges with the fourth country based on this graph. Italy and the United States generally have higher levels of education, economic freedom and infrastructure compared to Angola and Iceland. These characteristics have fostered innovation, productivity and investment, driving faster economic growth rates in Italy and the United States. In addition, Angola's abundant natural resources may contribute to the volatility of economic growth, while Iceland's geographic constraints and smaller market size limit its trade opportunities. These differences in education, economic freedom, infrastructure, and natural resource endowments have led to different growth trajectories among the four countries.
+
+Italy and the United States have higher levels of education, economic freedom, and infrastructure, which promote innovation, productivity, and investment. These factors have contributed to their faster growth rates compared to Angola and Iceland. In addition, Angola's dependence on natural resources and Iceland's geographic constraints further hamper their ability to connect with better-performing economies. Overall, differences in education, economic freedom, infrastructure and natural resource endowments play a crucial role in the different growth trajectories between Italy, the United States, Angola and Iceland.
+
+
+5. For this question, you have to compare the distribution of real per capita GDP across all 152 countries in the two assigned years expressed in thousands of international dollars of 2011 (the choice of units is to make the x-axis labels more readable). Create two histograms (with the option breaks=25), one for each year and interpret what you see. Do you see a difference in terms of inequality? Do you see a change in the proportion of poor countries?
+
+ Do you see a difference in terms of inequality?
+1979: The left-skewed distribution of the bars indicates that there are more countries with lower GDP per capita and fewer with higher GDP per capita. The right-hand tails indicate the presence of outliers or a small number of countries with significantly higher GDP per capita.
+2000: This distribution also appears to be left-skewed but with significantly higher values of GDP per capita. The tails appear to be less pronounced for high-income countries than in 1979.
+It can be inferred from this comparison that the average GDP per capita for these countries has increased because the main body of the distribution has shifted to the right. However, since both bars remain left-skewed, this suggests that inequality persists, with a significant number of countries clustered at the lower end of the GDP spectrum.
+Do you see a change in the proportion of poor countries?
+1979: A substantial number of countries have a GDP per capita of less than 10,000 international dollars, which might be considered the lower-end benchmark in this context.
+2000: While there are still many countries in the lower GDP per capita bracket, the frequency of those with very low GDP (close to 0-5,000) has decreased compared to 1979.
+This shift suggests that there has been a decrease in the proportion of 'poor countries' (as classified by GDP per capita) and that there's been economic growth among previously lower-income nations. Nonetheless, the persistence of a significant number of countries at the lower end of the scale indicates that poverty remains a challenge.
+
+
+6. For this question, you have to compare the distribution of real per capita GDP across all 152 countries in the two assigned years expressed logs. Create two histograms (with the option breaks=25), one for each year and interpret what you see. Do you see a difference in terms of inequality? Do you see a change in the proportion of poor countries? Also, explain why the histograms are different when the real per capita GDPs are expressed in logs.
+
+Do you see a difference in terms of inequality?
+1979: The histogram shows a broad distribution of countries across a range of GDP values. It is somewhat symmetric with a slight left skew, suggesting that while there is a spread in GDP, many countries are clustered around the median GDP value.
+2000: The distribution is also broad but exhibits a slight right skew, indicating that while the median GDP has possibly increased, there is now a longer tail on the higher end of the scale, suggesting that some countries have GDPs that are much higher than the rest.
+The use of logarithms typically makes the data more normally distributed if the original data is log-normally distributed (which income and GDP often are), and the histograms provide a view of relative differences rather than absolute ones. This is useful in assessing percentage changes and proportional relationships.
+Do you see a change in the proportion of poor countries?
+1979: The histogram shows that countries are more evenly distributed across different GDP categories.
+2000: Fewer countries are in the lowest GDP categories (as indicated by the log values), and there is a noticeable shift towards higher GDP values.
+
+Explain why the histograms are different when the real per capita GDPs are expressed in logs.
+
+Comparing the histograms on a logarithmic scale suggests that there has been an improvement in the distribution of GDP, with fewer countries at the very low end of the GDP scale, indicating a decrease in the proportion of what would be considered poor countries. The right skew in 2000 also suggests that there has been a significant increase in wealth for some countries, potentially indicating increased inequality. However, since the data is on a log scale, the spread of the distribution also shows that many countries have moved into higher categories of GDP per capita.
+
+
+References
+R. C. Feenstra, R. Inklaar, and M. P. Timmer. The next generation of the Penn world table. American
+Economic Review, 105(10):3150{3182, 2015. Available for download at www.ggdc.net/pwt.
+Statistics Canada. Table 18-10-0005-01, Consumer Price Index, annual average, not seasonally ad-
+justed. 2020. doi: 10.25318/1810000501-eng.
+
+
